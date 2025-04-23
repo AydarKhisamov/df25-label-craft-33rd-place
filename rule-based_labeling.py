@@ -421,7 +421,7 @@ def locate_pattern(text, pattern):
         return None
 
 
-df['pat_start_idx'] = df.progress_apply(
+df['pat_start_idx'] = df.apply(
     lambda x: locate_pattern(x['source_name'].lower(), x['pattern'].lower()),
     axis=1,
 )
